@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>ADD PRODUCT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]= "myform">
+    <ion-list>
+        <ion-item>
+            <ion-label position="stacked">BRAND</ion-label>
+            <ion-input type="text"   placeholder="Product Brand" formControlName= "brand" name="brand"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked">SIZE(KG)</ion-label>
+             <ion-input type="text" placeholder="size" formControlName="size" name="size"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">PRICE(KG)</ion-label>
+           <ion-input type="phone" placeholder="price" formControlName="price" name="price"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">QUANTITY</ion-label>
+         <ion-input type="phone" placeholder="quantity" formControlName="quantity" name="quantity"></ion-input>
+    </ion-item>
+    </ion-list>
+    <ion-row>
+        <ion-col>
+            <ion-button (click)="popAlert()" color="primary" shape="full" expand="block">Add Product</ion-button>
+        </ion-col>
+    </ion-row>
+  </form>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Recent Products</ion-card-title>
+      </ion-card-header>
+          <ion-card-content>
+            <table id="customers">
+              <tr>
+                <th>Brand</th>
+                <th>Size(KG)</th>
+                <th>Price</th>
+                <th>Quantity</th>
+              </tr>
+              <tr *ngFor="let product of product">
+                  <th>{{product.brand}}</th>
+                  <th>{{product.size}}</th>
+                  <th>{{product.price}}</th>
+                  <th>{{product.quantity}}</th>
+              </tr>
+            </table>   
+      </ion-card-content>
+    </ion-card>
+    
+</ion-content>

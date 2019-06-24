@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Add Cylinder </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="go_back()"> <!-- (click)="go_back()" -->
+        <ion-icon slot="end" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- serial_number, manufacture_date, manufacturer_name, capacity, batch_number, tracker_number, price, quantity -->
+<form [formGroup]= "myform">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating"> Serial Number </ion-label>
+        <ion-input formControlName="serialNumber" name="serialNumber" type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating"> Manufacture Date </ion-label>
+        <ion-input formControlName="manufactureDate" name="manufactureDate" type="date"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating"> Manufacturer Name </ion-label>
+        <ion-input formControlName="manufactureName"  name="manufactureName" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Capacity (in Kg) </ion-label>
+        <ion-input formControlName="capacity" name="capacity" type="number"></ion-input>
+      </ion-item>
+   
+      <ion-item>
+        <ion-label position="floating"> Price </ion-label>
+        <ion-input formControlName="price" name="price" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> quantity </ion-label>
+        <ion-input formControlName="quantity" name="quantity" type="number"></ion-input>
+      </ion-item>  
+
+      <ion-item>
+        <ion-label position="floating"> Batch Number </ion-label>
+        <ion-input formControlName="batchNumber" name="batchNumber" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating"> Tracker Number </ion-label>
+        <ion-input formControlName="trackerNumber" name="trackerNumber" type="text"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+    <ion-row>
+        <ion-col>
+            <ion-button (click)="save()" color="primary" shape="full" expand="block">Sign Up</ion-button>
+        </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

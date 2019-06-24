@@ -1,0 +1,54 @@
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-back-button defaultHref="/login"></ion-back-button>
+            </ion-buttons>
+          <ion-title>SIGNUP</ion-title>
+        </ion-toolbar>
+      </ion-header>
+  <ion-content padding>
+   <ion-grid>
+      <ion-col>
+          <div class="ion-text-center">LOGO</div>
+      </ion-col>
+      <form [formGroup]= "myform">
+        <ion-list>
+            <ion-item>
+                <ion-label position="stacked">USERNAME</ion-label>
+                <ion-input type="text" placeholder="xxxxxxxx" formControlName= "username" name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">EMAIL</ion-label>
+                 <ion-input type="email" placeholder="xxx@email.com" formControlName="email" name="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">PHONE</ion-label>
+                 <ion-input type="phone" placeholder="xxxxxxxxx" formControlName="phone" name="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">PASSWORD</ion-label>
+                 <ion-input type="password" placeholder="xxxxxxxxx" formControlName="password" name="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">CONFIRM PASSWORD</ion-label>
+                 <ion-input type="password" placeholder="xxxxxxxxx" formControlName="password_confirmation" name="password_confirmation"></ion-input>
+            </ion-item>
+          
+        </ion-list>
+        <ion-row>
+            <ion-col>
+                <ion-button (click)="register()" color="primary" shape="full" expand="block">Sign Up</ion-button>
+            </ion-col>
+        </ion-row>
+      </form>
+   </ion-grid>
+  <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-right">
+         <div routerLink="/login">Already have an account?</div>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  </ion-content>
+</ion-app>
